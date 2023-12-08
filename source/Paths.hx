@@ -116,7 +116,7 @@ class Paths
 		return getPath(file, type, library);
 	}
 
-	inline static public function txt(key:String, ?library:String)
+	inline static public function tt(key:String, ?library:String)
 	{
 		return getPath('data/$key.txt', TEXT, library);
 	}
