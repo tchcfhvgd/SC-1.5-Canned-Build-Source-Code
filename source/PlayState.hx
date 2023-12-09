@@ -419,10 +419,10 @@ class PlayState extends MusicBeatState
 		noteSaveHa = new FlxSave();
 
 
-		theListBotplay = CoolUtil.coolTextFile(Paths.txt('botplayText'));
+		theListBotplay = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('botplayText'));
 
 
-		wavyBGs = CoolUtil.coolTextFile(Paths.txt('wavyBackgrounds'));
+		wavyBGs = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('wavyBackgrounds'));
 
 
 		randomBotplayText = theListBotplay[FlxG.random.int(0, theListBotplay.length - 1)];
