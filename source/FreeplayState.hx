@@ -237,13 +237,13 @@ class FreeplayState extends MusicBeatState
 		#end
 		WeekData.reloadWeekFiles(false);
 
-		main = CoolUtil.coolTextFile(Paths.txt('sectionMainSonglist'));
+		main = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('sectionMainSonglist'));
 		
-		extra = CoolUtil.coolTextFile(Paths.txt('sectionExtraSonglist'));
+		extra = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('sectionExtraSonglist'));
 		
-		joke = CoolUtil.coolTextFile(Paths.txt('sectionJokeSonglist'));
+		joke = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('sectionJokeSonglist'));
 		
-		hidden = CoolUtil.coolTextFile(Paths.txt('sectionHiddenSonglist'));
+		hidden = CoolUtil.coolTextFile(SUtil.getPath() + Paths.txt('sectionHiddenSonglist'));
 
 		for (i in 0...WeekData.weeksList.length) {
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
