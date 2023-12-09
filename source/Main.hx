@@ -30,7 +30,8 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-
+                SUtil.gameCrashCheck();
+		
 		if (stage != null)
 		{
 			init();
@@ -64,7 +65,9 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
-
+                SUtil.doTheCheck();
+		
+		
 		#if !debug
 		initialState = TitleState;
 		#end
@@ -72,13 +75,11 @@ class Main extends Sprite
 		Paths.getModFolders();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
 
 		#if html5
 		FlxG.autoPause = false;
